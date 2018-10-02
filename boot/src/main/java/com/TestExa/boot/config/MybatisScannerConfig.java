@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @AutoConfigureAfter(MybatisConfig.class) // 保证在MybatisConfig类实例化后才实例化此方法
 public class MybatisScannerConfig { 
 	
-	// mapper接口的扫描器
+	// dao接口的扫描器
 	@Bean
 	public MapperScannerConfigurer mapperScannerConfigurer() {
 		MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();

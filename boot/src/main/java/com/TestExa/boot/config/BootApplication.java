@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
@@ -12,21 +13,21 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource(value = { "classpath:jdbc.properties" })
+@PropertySource(value = { "classpath:application.properties" })
 @ComponentScan(basePackages = "com.TestExa.boot")
 @SpringBootApplication
 public class BootApplication {
 
-	@Value("${jdbc.driver}")
+	@Value("${spring.datasource.driver-class-name}")
 	private String driverClassName;
 
-	@Value("${jdbc.url}")
+	@Value("${spring.datasource.url}")
 	private String url;
 
-	@Value("${jdbc.username}")
+	@Value("${spring.datasource.username}")
 	private String username;
 
-	@Value("${jdbc.password}")
+	@Value("${spring.datasource.password}")
 	private String password;
 
 	// 配置数据源
@@ -42,5 +43,9 @@ public class BootApplication {
 
 	protected SpringApplicationBuilder springApplicationBuilder(SpringApplicationBuilder builder) {
 		return builder.sources(BootApplication.class);
+	}
+	
+	public static void main(String[] args) {
+		SpringApplication.run(BootApplication.class, args);
 	}
 }

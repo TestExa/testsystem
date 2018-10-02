@@ -2,16 +2,16 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 	<context id="context1">
-		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/best-store?useUnicode=true&amp;characterEncoding=UTF-8"
+		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8"
 			driverClass="com.mysql.jdbc.Driver" password="a" userId="root" />
 		<!-- 实施类包名 -->
-		<javaModelGenerator targetPackage="com.bs.beststore.vo"
+		<javaModelGenerator targetPackage="com.TestExa.boot.vo"
 			targetProject="src/main/java" />
 		<!-- 映射文件 -->
-		<sqlMapGenerator targetPackage="com.bs.beststore.dao"
+		<sqlMapGenerator targetPackage="com.TestExa.boot.dao"
 			targetProject="src/main/java" />
 		<!-- dao接口 -->
-		<javaClientGenerator targetPackage="com.bs.beststore.dao"
+		<javaClientGenerator targetPackage="com.TestExa.boot.dao"
 			targetProject="src/main/java" type="XMLMAPPER" />
 		<!-- schema=""表空间，没有就不填 -->
 		<table schema="???" tableName="address"></table>

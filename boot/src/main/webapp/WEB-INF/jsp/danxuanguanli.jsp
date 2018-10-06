@@ -52,7 +52,7 @@
 				  </td>
 				</tr>
 			</table>
-			<input id="confir" type="button" value="确定" />
+			<input id="confir" type="button" value="确定" onclick="window.location.href='danxuanti.do'"/>
 		</div>
 	</body>
 </html>

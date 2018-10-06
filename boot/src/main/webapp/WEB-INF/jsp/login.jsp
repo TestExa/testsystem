@@ -76,7 +76,7 @@
 					<div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-10">
 					        <button id="log" type="button" class="btn btn-default">登录</button>
-					        <button id="reg" type="button" class="btn btn-default">注册</button>
+					        <button id="reg" type="button" class="btn btn-default" onclick="window.location.href='register.do'">注册</button>
 					    </div>
 					</div>
 				</form>
@@ -106,13 +106,10 @@
 				exsid:exsid
 			},function(data){
 				if (data == "OK1") {
-					alert(1);
 					window.location.href="main.do";
 				} else if (data == "OK2") {
-					alert(2);
-					window.location.href="message.do";
+					window.location.href="manage.do";
 				} else {
-					alert(3);
 					var errorInfo = "${error}";
 					$("#error").html(errorInfo);
 				}

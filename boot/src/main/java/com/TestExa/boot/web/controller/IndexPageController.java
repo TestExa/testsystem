@@ -28,21 +28,67 @@ public class IndexPageController {
 	@Autowired
 	private ExadminBiz exadminBiz;
 	
+	// 首页
 	@RequestMapping("/")
 	public String home() {
 		return "index";
 	}
 	
+	// 主页
 	@RequestMapping("main.do")
 	public String main() {
 		return "main";
 	}
 	
-	@RequestMapping("message.do")
-	public String message() {
-		return "message";
+	// 后台主页
+	@RequestMapping("manage.do")
+	public String manage() {
+		return "manage";
 	}
 	
+	// 注册页
+	@RequestMapping("register.do")
+	public String register() {
+		return "register";
+	}
+	
+	// 单选题管理
+	@RequestMapping("danxuanguanli.do")
+	public String danxuanguanli() {
+		return "danxuanguanli";
+	}
+	
+	// 单选题管理
+	@RequestMapping("danxuanti.do")
+	public String danxuanti() {
+		return "danxuanti";
+	}
+	
+	// 在线考试
+	@RequestMapping("zaixiankaoshi.do")
+	public String zaixiankaoshi() {
+		return "zaixiankaoshi";
+	}
+	
+	// 成绩單
+	@RequestMapping("chengjidan.do")
+	public String chengjidan() {
+		return "chengjidan";
+	}
+	
+	// 试卷管理
+	@RequestMapping("shijuanguanli.do")
+	public String shijuanguanli() {
+		return "shijuanguanli";
+	}
+	
+	// 后台提示页
+	@RequestMapping("notice.do")
+	public String notice() {
+		return "notice";
+	}
+	
+	// 登陆页
 	@RequestMapping("login.do")
 	public String login(Integer index, Model model) {
 		List<Exschool> lists = exschoolBiz.findAll();
@@ -51,6 +97,7 @@ public class IndexPageController {
 		return "login";
 	}
 	
+	// 登陆操作
 	@RequestMapping("logining.do")
 	public void logining(Integer status, String name, String pwd, int exsid, Model model,
 				HttpSession session, PrintWriter out) {

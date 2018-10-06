@@ -2,8 +2,8 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 	<context id="context1">
-		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8"
-			driverClass="com.mysql.jdbc.Driver" password="a" userId="root" />
+		<jdbcConnection connectionURL="jdbc:mysql://localhost:3306/examsystem?useUnicode=true&amp;characterEncoding=UTF-8"
+			driverClass="com.mysql.jdbc.Driver" password="aaaa" userId="root" />
 		<!-- 实施类包名 -->
 		<javaModelGenerator targetPackage="com.TestExa.boot.vo"
 			targetProject="src/main/java" />
@@ -14,17 +14,20 @@
 		<javaClientGenerator targetPackage="com.TestExa.boot.dao"
 			targetProject="src/main/java" type="XMLMAPPER" />
 		<!-- schema=""表空间，没有就不填 -->
-		<table schema="???" tableName="address"></table>
-		<table schema="???" tableName="blog"></table>
-		<table schema="???" tableName="cart"></table>
-		<table schema="???" tableName="discuss"></table>
-		<table schema="???" tableName="favorite"></table>
-		<table schema="???" tableName="goods"></table>
-		<table schema="???" tableName="human"></table>
-		<table schema="???" tableName="orders"></table>
-		<table schema="???" tableName="ordersdetail"></table>
-		<table schema="???" tableName="ordersreturn"></table>
-		<table schema="???" tableName="store"></table>
-		<table schema="???" tableName="type"></table>
+		<table schema="???" tableName="exschool"></table>
+		<table schema="???" tableName="exadmin"></table>
+		<table schema="???" tableName="exteacher"></table>
+		<table schema="???" tableName="exstudent"></table>
+		<table schema="???" tableName="exterm"></table>
+		<table schema="???" tableName="exsubject"></table>
+		<table schema="???" tableName="extype"></table>
+		<table schema="???" tableName="expaper"></table>
+		<table schema="???" tableName="exquestions"></table>
+		<table schema="???" tableName="exoption"></table>
+		<table schema="???" tableName="exanswer"></table>
+		<table schema="???" tableName="exquestion_paper"></table>
+		<table schema="???" tableName="exscore"></table>
+		<table schema="???" tableName="examinfo"></table>
+		<table schema="???" tableName="exstudentpapers"></table>
 	</context>
 </generatorConfiguration>

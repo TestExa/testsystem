@@ -20,95 +20,94 @@ import com.TestExa.boot.vo.Exstudent;
 
 @Controller
 public class IndexPageController {
-	
+
 	@Autowired
 	private ExschoolBiz exschoolBiz;
 	@Autowired
 	private ExstudentBiz exstudentBiz;
 	@Autowired
 	private ExadminBiz exadminBiz;
-	
+
 	// 首页
 	@RequestMapping("/")
 	public String home() {
 		return "index";
 	}
-	
+
 	// 主页
-	@RequestMapping("main.do")
+	@RequestMapping("main.html")
 	public String main() {
 		return "main";
 	}
-	
+
 	// 后台主页
-	@RequestMapping("manage.do")
+	@RequestMapping("manage.html")
 	public String manage() {
 		return "manage";
 	}
-	
+
 	// 注册页
-	@RequestMapping("register.do")
+	@RequestMapping("register.html")
 	public String register() {
 		return "register";
 	}
-	
+
 	// 单选题管理
-	@RequestMapping("danxuanguanli.do")
+	@RequestMapping("danxuanguanli.html")
 	public String danxuanguanli() {
 		return "danxuanguanli";
 	}
-	
+
 	// 单选题管理
-	@RequestMapping("danxuanti.do")
+	@RequestMapping("danxuanti.html")
 	public String danxuanti() {
 		return "danxuanti";
 	}
-	
+
 	// 在线考试
-	@RequestMapping("zaixiankaoshi.do")
+	@RequestMapping("zaixiankaoshi.html")
 	public String zaixiankaoshi() {
 		return "zaixiankaoshi";
 	}
-	
+
 	// 成绩單
-	@RequestMapping("chengjidan.do")
+	@RequestMapping("chengjidan.html")
 	public String chengjidan() {
 		return "chengjidan";
 	}
-	
+
 	// 试卷管理
-	@RequestMapping("shijuanguanli.do")
+	@RequestMapping("shijuanguanli.html")
 	public String shijuanguanli() {
 		return "shijuanguanli";
 	}
-	
+
 	// 后台提示页
-	@RequestMapping("notice.do")
+	@RequestMapping("notice.html")
 	public String notice() {
 		return "notice";
 	}
-	
+
 	// 登陆页
-	@RequestMapping("login.do")
+	@RequestMapping("login.html")
 	public String login(Integer index, Model model) {
 		List<Exschool> lists = exschoolBiz.findAll();
 		model.addAttribute("list", lists);
 		model.addAttribute("status", index);
 		return "login";
 	}
-	
+
 	// 登陆操作
 	@RequestMapping("logining.do")
-	public void logining(Integer status, String name, String pwd, int exsid, Model model,
-				HttpSession session, PrintWriter out) {
+	public void logining(Integer status, String name, String pwd, int exsid, Model model, HttpSession session,
+			PrintWriter out) {
 		if (status == 1) {// 学生登陆
 			try {
 				Exstudent exstudent = exstudentBiz.login(name, pwd, exsid);
 				session.setAttribute("login", exstudent);
 				out.print("OK1");
 			} catch (BizException e) {
-				out.print("error");
-				model.addAttribute("error", e.getMessage());
+				out.print(e.getMessage());
 			}
 		} else {// 管理员登陆
 			try {
@@ -116,10 +115,9 @@ public class IndexPageController {
 				out.print("OK2");
 				session.setAttribute("login", exadmin);
 			} catch (BizException e) {
-				out.print("error");
-				model.addAttribute("error", e.getMessage());
+				out.print(e.getMessage());
 			}
 		}
 	}
-	
+
 }

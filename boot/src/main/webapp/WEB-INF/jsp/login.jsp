@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/login.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
@@ -71,7 +71,7 @@
 					        </div>
 					    </div>
 					</div>
-					<span id="error"></span>
+					<h4 id="error" style="color:red;margin-left:50px;"></h4>
 					<!--登录，注册-->
 					<div class="form-group">
 					    <div class="col-sm-offset-2 col-sm-10">
@@ -106,12 +106,13 @@
 				exsid:exsid
 			},function(data){
 				if (data == "OK1") {
-					window.location.href="main.do";
+					// 用户名15450112 密码a
+					window.location.href="main.html";
 				} else if (data == "OK2") {
-					window.location.href="manage.do";
+					// 用户名root 密码a
+					window.location.href="manage.html";
 				} else {
-					var errorInfo = "${error}";
-					$("#error").html(errorInfo);
+					$("#error").html(data);
 				}
 			});
 		});

@@ -32,8 +32,8 @@
 						<li class="active"><a href="#home" >主页</a></li>
 						<li><a href="#function">功能</a></li>
 						<li><a href="#team">团队</a></li>
-						<li><a href="login.do?index=1">学生登录</a></li>
-						<li><a href="login.do?index=2">管理员登录</a></li>
+						<li><a href="login.html?index=1">学生登录</a></li>
+						<li><a href="login.html?index=2">管理员登录</a></li>
 					</ul>
 				</div>
 			</div>

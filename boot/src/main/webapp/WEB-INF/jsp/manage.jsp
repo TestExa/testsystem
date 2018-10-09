@@ -203,14 +203,14 @@
 				// 2、二级目录中的resourceID对应三级目录parentID，其他的都可以自己设置
 				data = [
 				{"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":71,"resourceName":"试卷管理","resourceOrder":0,"resourceType":""},
-				{"accessPath":"shijuanguanli.do","checked":false,"delFlag":0,"parentID":71,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":12,"resourceName":"试卷制定","resourceOrder":0,"resourceType":""},
+				{"accessPath":"shijuanguanli.html","checked":false,"delFlag":0,"parentID":71,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":12,"resourceName":"试卷制定","resourceOrder":0,"resourceType":""},
 				//三级目录	二级目录中的resourceID对应parentID
-				{"accessPath":"shijuanguanli.do","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":70,"resourceName":"试题管理","resourceOrder":0,"resourceType":""},
-				{"accessPath":"danxuanguanli.do","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":72,"resourceName":"单选题管理","resourceOrder":0,"resourceType":""},
-				{"accessPath":"danxuanguanli.do","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":73,"resourceName":"多选题管理","resourceOrder":0,"resourceType":""},
-				{"accessPath":"danxuanguanli.do","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":74,"resourceName":"判断题管理","resourceOrder":0,"resourceType":""},
-				{"accessPath":"danxuanguanli.do","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":75,"resourceName":"填空题管理","resourceOrder":0,"resourceType":""},
-				{"accessPath":"danxuanguanli.do","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":76,"resourceName":"主观题管理","resourceOrder":0,"resourceType":""},
+				{"accessPath":"shijuanguanli.html","checked":false,"delFlag":0,"parentID":3,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":70,"resourceName":"试题管理","resourceOrder":0,"resourceType":""},
+				{"accessPath":"danxuanguanli.html","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":72,"resourceName":"单选题管理","resourceOrder":0,"resourceType":""},
+				{"accessPath":"danxuanguanli.html","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":73,"resourceName":"多选题管理","resourceOrder":0,"resourceType":""},
+				{"accessPath":"danxuanguanli.html","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":74,"resourceName":"判断题管理","resourceOrder":0,"resourceType":""},
+				{"accessPath":"danxuanguanli.html","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":75,"resourceName":"填空题管理","resourceOrder":0,"resourceType":""},
+				{"accessPath":"danxuanguanli.html","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":76,"resourceName":"主观题管理","resourceOrder":0,"resourceType":""},
 				];
 			}else  if('dleft_tab2' == treeObj){
 				$("#dleft_tab1").css('display','none');
@@ -219,7 +219,7 @@
 				$("#dleft_tab4").css('display','none');
 				data = [
 				{"accessPath":"","checked":false,"delFlag":0,"parentID":2,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":70,"resourceName":"浏览试卷","resourceOrder":0,"resourceType":""},
-				{"accessPath":"zaixiankaoshi.do","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":71,"resourceName":"数据库","resourceOrder":0,"resourceType":""},
+				{"accessPath":"zaixiankaoshi.html","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":71,"resourceName":"数据库","resourceOrder":0,"resourceType":""},
 				{"accessPath":"","checked":false,"delFlag":0,"parentID":70,"resourceCode":"","resourceDesc":"","resourceGrade":3,"resourceID":72,"resourceName":"数据结构","resourceOrder":0,"resourceType":""},
 				];
 			}else  if('dleft_tab3' == treeObj){
@@ -227,7 +227,7 @@
 				$("#dleft_tab2").css('display','none');
 				$("#dleft_tab3").css('display','block');
 				$("#dleft_tab4").css('display','none');
-				data = [{"accessPath":"chengjidan.do","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":3,"resourceName":"JAVA网络编程","resourceOrder":0,"resourceType":""},
+				data = [{"accessPath":"chengjidan.html","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":3,"resourceName":"JAVA网络编程","resourceOrder":0,"resourceType":""},
 				{"accessPath":"","checked":false,"delFlag":0,"parentID":1,"resourceCode":"","resourceDesc":"","resourceGrade":2,"resourceID":2,"resourceName":"C语言程序设计","resourceOrder":0,"resourceType":""},
 				];
 			}else if('dleft_tab4' == treeObj){
@@ -385,7 +385,7 @@
 	 	<span id="here_area">当前位置：系统&nbsp;>&nbsp;注意</span>
 	</div>
     <div id="main">
-      	<iframe name="right" id="rightMain" src="notice.do" width="100%" height="100%" ></iframe>
+      	<iframe name="right" id="rightMain" src="notice.html" width="100%" height="100%" ></iframe>
     </div>
 
 </body>

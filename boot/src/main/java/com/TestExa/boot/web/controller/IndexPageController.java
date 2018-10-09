@@ -14,6 +14,7 @@ import com.TestExa.boot.biz.BizException;
 import com.TestExa.boot.biz.ExadminBiz;
 import com.TestExa.boot.biz.ExschoolBiz;
 import com.TestExa.boot.biz.ExstudentBiz;
+import com.TestExa.boot.util.MD5Util;
 import com.TestExa.boot.vo.Exadmin;
 import com.TestExa.boot.vo.Exschool;
 import com.TestExa.boot.vo.Exstudent;
@@ -119,5 +120,15 @@ public class IndexPageController {
 			}
 		}
 	}
-
+	
+	// 学生注册操作
+	@RequestMapping("register.do")
+	public void register(Exstudent exstudent, Model model, HttpSession session, PrintWriter out) {
+		try {
+			exstudentBiz.register(exstudent);
+			out.print("OK");	// 注册成功，从前端ajax跳转至登录界面
+		} catch (BizException e) {
+			out.print(e.getMessage());
+		}
+	}	
 }

@@ -106,8 +106,10 @@
 				exsid:exsid
 			},function(data){
 				if (data == "OK1") {
-					winhtmlw.location.href="main.html";
+					// 用户名15450112 密码a
+					window.location.href="main.html";
 				} else if (data == "OK2") {
+					// 用户名root 密码a
 					window.location.href="manage.html";
 				} else {
 					$("#error").html(data);

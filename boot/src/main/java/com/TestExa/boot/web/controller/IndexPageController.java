@@ -14,6 +14,7 @@ import com.TestExa.boot.biz.BizException;
 import com.TestExa.boot.biz.ExadminBiz;
 import com.TestExa.boot.biz.ExschoolBiz;
 import com.TestExa.boot.biz.ExstudentBiz;
+import com.TestExa.boot.util.MD5Util;
 import com.TestExa.boot.vo.Exadmin;
 import com.TestExa.boot.vo.Exschool;
 import com.TestExa.boot.vo.Exstudent;
@@ -48,8 +49,20 @@ public class IndexPageController {
 
 	// 注册页
 	@RequestMapping("register.html")
-	public String register() {
-		return "register";
+	public String register(HttpSession session) {
+		session.invalidate();
+		return "login";
+	}
+
+	// 学生注册操作
+	@RequestMapping("register.do")
+	public void register(Exstudent exstudent, Model model, HttpSession session, PrintWriter out) {
+		try {
+			exstudentBiz.register(exstudent);
+			out.print("OK"); // 注册成功，从前端ajax跳转至登录界面
+		} catch (BizException e) {
+			out.print(e.getMessage());
+		}
 	}
 
 	// 单选题管理
@@ -58,10 +71,10 @@ public class IndexPageController {
 		return "danxuanguanli";
 	}
 
-	// 单选题管理
-	@RequestMapping("danxuanti.html")
-	public String danxuanti() {
-		return "danxuanti";
+	// 多选题管理
+	@RequestMapping("duoxuanguanli.html")
+	public String duoxuanguanli() {
+		return "duoxuanguanli";
 	}
 
 	// 在线考试
@@ -120,4 +133,45 @@ public class IndexPageController {
 		}
 	}
 
+	// 单选题
+	@RequestMapping("danxuanti.html")
+	public String danxuanti() {
+		return "danxuanti";
+	}
+
+	// 多选题
+	@RequestMapping("duoxuanti.html")
+	public String duoxuanti() {
+		return "duoxuanti";
+	}
+
+	// 判断题
+	@RequestMapping("panduanti.html")
+	public String panduanti() {
+		return "panduanti";
+	}
+
+	// 填空题
+	@RequestMapping("tiankongti.html")
+	public String tiankongti() {
+		return "tiankongti";
+	}
+	
+	// 主观题
+	@RequestMapping("zhuguanti.html")
+	public String zhuguanti() {
+		return "zhuguanti";
+	}
+
+	// 考试说明
+	@RequestMapping("kaoshishuoming.html")
+	public String kaoshishuoming() {
+		return "kaoshishuoming";
+	}
+
+	// 查询分数
+	@RequestMapping("chaxunfenshu.html")
+	public String chaxunfenshu() {
+		return "chaxunfenshu";
+	}
 }

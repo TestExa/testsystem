@@ -15,7 +15,7 @@ import com.TestExa.boot.vo.ExstudentExample.Criteria;
 
 @Service
 public class ExstudentBizImpl implements ExstudentBiz {
-	
+
 	@Autowired
 	private ExstudentMapper exstudentMapper;
 
@@ -34,10 +34,25 @@ public class ExstudentBizImpl implements ExstudentBiz {
 		criteria.andExstupwdEqualTo(pwd);
 		criteria.andExsidEqualTo(exsid);
 		List<Exstudent> list = exstudentMapper.selectByExample(exstudentExample);
-		if (list == null || list.size() ==0) {
+		if (list == null || list.size() == 0) {
 			throw new BizException("用户名或密码错误");
 		}
 		return list.get(0);
+	}
+
+	@Override
+	public int register(Exstudent exstudent) throws BizException {
+		if (exstudent.getExstuname() == null || "".equals(exstudent.getExstuname())) {
+			throw new BizException("用户名不能为空");
+		} else if (exstudent.getExstupwd() == null || "".equals(exstudent.getExstupwd())) {
+			throw new BizException("密码不能为空");
+		} else if (exstudent.getExstunumber() == null || "".equals(exstudent.getExstunumber())) {
+			throw new BizException("学号不能为空");
+		} else if (exstudent.getExstutel() == null || "".equals(exstudent.getExstutel())) {
+			throw new BizException("手机不能为空");
+		}
+		exstudent.setExstupwd(MD5Util.MD5(exstudent.getExstuname() + exstudent.getExstupwd())); // 加密存入数据库
+		return exstudentMapper.insertSelective(exstudent);
 	}
 
 }
